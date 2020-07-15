@@ -13,9 +13,12 @@
 		B433572824BF1B740048A7D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B433572624BF1B740048A7D4 /* Main.storyboard */; };
 		B433572A24BF1B760048A7D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B433572924BF1B760048A7D4 /* Assets.xcassets */; };
 		B433572D24BF1B760048A7D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B433572B24BF1B760048A7D4 /* LaunchScreen.storyboard */; };
+		E1E5523F019E3289DFF51A26 /* Pods_CicekSepeti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4C074CEA8EEED1E71CEAE9 /* Pods_CicekSepeti.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		212300DFD9FBF9E912886072 /* Pods-CicekSepeti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CicekSepeti.debug.xcconfig"; path = "Target Support Files/Pods-CicekSepeti/Pods-CicekSepeti.debug.xcconfig"; sourceTree = "<group>"; };
+		8C4C074CEA8EEED1E71CEAE9 /* Pods_CicekSepeti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CicekSepeti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B433571D24BF1B740048A7D4 /* CicekSepeti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CicekSepeti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B433572024BF1B740048A7D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B433572224BF1B740048A7D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		B433572924BF1B760048A7D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B433572C24BF1B760048A7D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B433572E24BF1B760048A7D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE3F0658F02ACFDFFA5AD598 /* Pods-CicekSepeti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CicekSepeti.release.xcconfig"; path = "Target Support Files/Pods-CicekSepeti/Pods-CicekSepeti.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E5523F019E3289DFF51A26 /* Pods_CicekSepeti.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4809628D37E5AB2BBBE9063D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C4C074CEA8EEED1E71CEAE9 /* Pods_CicekSepeti.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B433571424BF1B740048A7D4 = {
 			isa = PBXGroup;
 			children = (
 				B433571F24BF1B740048A7D4 /* CicekSepeti */,
 				B433571E24BF1B740048A7D4 /* Products */,
+				C42761797EDE7D7520B37B67 /* Pods */,
+				4809628D37E5AB2BBBE9063D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,16 @@
 			path = CicekSepeti;
 			sourceTree = "<group>";
 		};
+		C42761797EDE7D7520B37B67 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				212300DFD9FBF9E912886072 /* Pods-CicekSepeti.debug.xcconfig */,
+				CE3F0658F02ACFDFFA5AD598 /* Pods-CicekSepeti.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B433573124BF1B760048A7D4 /* Build configuration list for PBXNativeTarget "CicekSepeti" */;
 			buildPhases = (
+				DC022AF5522337C8DEE82B21 /* [CP] Check Pods Manifest.lock */,
 				B433571924BF1B740048A7D4 /* Sources */,
 				B433571A24BF1B740048A7D4 /* Frameworks */,
 				B433571B24BF1B740048A7D4 /* Resources */,
+				82797ECB435FB0FF54C3C499 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		82797ECB435FB0FF54C3C499 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CicekSepeti/Pods-CicekSepeti-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CicekSepeti/Pods-CicekSepeti-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CicekSepeti/Pods-CicekSepeti-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC022AF5522337C8DEE82B21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CicekSepeti-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B433571924BF1B740048A7D4 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		B433573224BF1B760048A7D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 212300DFD9FBF9E912886072 /* Pods-CicekSepeti.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		B433573324BF1B760048A7D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE3F0658F02ACFDFFA5AD598 /* Pods-CicekSepeti.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

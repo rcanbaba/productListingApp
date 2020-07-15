@@ -1,0 +1,6 @@
+framework module Pods_CicekSepeti {
+  umbrella header "Pods-CicekSepeti-umbrella.h"
+
+  export *
+  module * { export * }
+}
