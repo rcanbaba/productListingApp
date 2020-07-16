@@ -14,6 +14,7 @@
 		B433572A24BF1B760048A7D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B433572924BF1B760048A7D4 /* Assets.xcassets */; };
 		B433572D24BF1B760048A7D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B433572B24BF1B760048A7D4 /* LaunchScreen.storyboard */; };
 		B433573524BF35BB0048A7D4 /* ProductObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B433573424BF35BB0048A7D4 /* ProductObject.swift */; };
+		B49656FA24C05D1B0002E7CD /* CustomCicekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49656F924C05D1B0002E7CD /* CustomCicekCell.swift */; };
 		E1E5523F019E3289DFF51A26 /* Pods_CicekSepeti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4C074CEA8EEED1E71CEAE9 /* Pods_CicekSepeti.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		B433572C24BF1B760048A7D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B433572E24BF1B760048A7D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B433573424BF35BB0048A7D4 /* ProductObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductObject.swift; sourceTree = "<group>"; };
+		B49656F924C05D1B0002E7CD /* CustomCicekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCicekCell.swift; sourceTree = "<group>"; };
 		CE3F0658F02ACFDFFA5AD598 /* Pods-CicekSepeti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CicekSepeti.release.xcconfig"; path = "Target Support Files/Pods-CicekSepeti/Pods-CicekSepeti.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 			children = (
 				B433572024BF1B740048A7D4 /* AppDelegate.swift */,
 				B433573424BF35BB0048A7D4 /* ProductObject.swift */,
+				B49656F924C05D1B0002E7CD /* CustomCicekCell.swift */,
 				B433572224BF1B740048A7D4 /* SceneDelegate.swift */,
 				B433572424BF1B740048A7D4 /* ViewController.swift */,
 				B433572624BF1B740048A7D4 /* Main.storyboard */,
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B49656FA24C05D1B0002E7CD /* CustomCicekCell.swift in Sources */,
 				B433572524BF1B740048A7D4 /* ViewController.swift in Sources */,
 				B433572124BF1B740048A7D4 /* AppDelegate.swift in Sources */,
 				B433573524BF35BB0048A7D4 /* ProductObject.swift in Sources */,
