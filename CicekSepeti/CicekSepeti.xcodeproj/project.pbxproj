@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1655E92924C37BD900BC9EA4 /* DynamicFilterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655E92824C37BD900BC9EA4 /* DynamicFilterObject.swift */; };
+		1655E92B24C37BF800BC9EA4 /* DynamicFilterValuesObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655E92A24C37BF800BC9EA4 /* DynamicFilterValuesObject.swift */; };
 		165AC6C324C318620028FED6 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165AC6C224C318620028FED6 /* FilterViewController.swift */; };
 		B433572124BF1B740048A7D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B433572024BF1B740048A7D4 /* AppDelegate.swift */; };
 		B433572324BF1B740048A7D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B433572224BF1B740048A7D4 /* SceneDelegate.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1655E92824C37BD900BC9EA4 /* DynamicFilterObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFilterObject.swift; sourceTree = "<group>"; };
+		1655E92A24C37BF800BC9EA4 /* DynamicFilterValuesObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFilterValuesObject.swift; sourceTree = "<group>"; };
 		165AC6C224C318620028FED6 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		212300DFD9FBF9E912886072 /* Pods-CicekSepeti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CicekSepeti.debug.xcconfig"; path = "Target Support Files/Pods-CicekSepeti/Pods-CicekSepeti.debug.xcconfig"; sourceTree = "<group>"; };
 		8C4C074CEA8EEED1E71CEAE9 /* Pods_CicekSepeti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CicekSepeti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +52,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		165AC72024C350890028FED6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B433572424BF1B740048A7D4 /* ViewController.swift */,
+				165AC6C224C318620028FED6 /* FilterViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		165AC72124C350DD0028FED6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B433573424BF35BB0048A7D4 /* ProductObject.swift */,
+				1655E92824C37BD900BC9EA4 /* DynamicFilterObject.swift */,
+				1655E92A24C37BF800BC9EA4 /* DynamicFilterValuesObject.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		165AC72224C350E80028FED6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B49656F924C05D1B0002E7CD /* CustomCicekCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		4809628D37E5AB2BBBE9063D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,12 +108,11 @@
 		B433571F24BF1B740048A7D4 /* CicekSepeti */ = {
 			isa = PBXGroup;
 			children = (
+				165AC72224C350E80028FED6 /* Views */,
+				165AC72124C350DD0028FED6 /* Models */,
+				165AC72024C350890028FED6 /* ViewControllers */,
 				B433572024BF1B740048A7D4 /* AppDelegate.swift */,
-				B433573424BF35BB0048A7D4 /* ProductObject.swift */,
-				B49656F924C05D1B0002E7CD /* CustomCicekCell.swift */,
 				B433572224BF1B740048A7D4 /* SceneDelegate.swift */,
-				B433572424BF1B740048A7D4 /* ViewController.swift */,
-				165AC6C224C318620028FED6 /* FilterViewController.swift */,
 				B433572624BF1B740048A7D4 /* Main.storyboard */,
 				B433572924BF1B760048A7D4 /* Assets.xcassets */,
 				B433572B24BF1B760048A7D4 /* LaunchScreen.storyboard */,
@@ -216,8 +246,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				165AC6C324C318620028FED6 /* FilterViewController.swift in Sources */,
+				1655E92924C37BD900BC9EA4 /* DynamicFilterObject.swift in Sources */,
 				B49656FA24C05D1B0002E7CD /* CustomCicekCell.swift in Sources */,
 				B433572524BF1B740048A7D4 /* ViewController.swift in Sources */,
+				1655E92B24C37BF800BC9EA4 /* DynamicFilterValuesObject.swift in Sources */,
 				B433572124BF1B740048A7D4 /* AppDelegate.swift in Sources */,
 				B433573524BF35BB0048A7D4 /* ProductObject.swift in Sources */,
 				B433572324BF1B740048A7D4 /* SceneDelegate.swift in Sources */,

@@ -16,8 +16,7 @@ enum requestUrl: String{
 }
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, sendFilterDelegateProtocol {
-     
-    
+         
     @IBOutlet var tableView: UITableView!
     @IBOutlet var filterButton: UIButton!
     @IBOutlet var cicekSepetiButton: UIButton!
@@ -31,6 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         setupUI()
         getProductRequest()
+      //  getProductRequestwithParam("2007101")
         
     }    
     
@@ -62,8 +62,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 // MARK: protocol filter data
-    func sendDataToFirstViewController(myData: String) {
-        print(myData)
+    func sendDataToFirstViewController(parameters: [String : String]) {
+        print(parameters)
+        getProductRequestwithParam(parameters)
     }
     
  // MARK: refresh Button
@@ -88,28 +89,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
            }
        }
     
-    func getProductRequestwithParam(){ // filtre tiplerine göre parametreler ekliyoruz.
+    func getProductRequestwithParam(_ params: [String : String]){ // filtre tiplerine göre parametreler ekliyoruz.
         
         let reqUrl = requestUrl.productList.rawValue
         
-        Alamofire.request(reqUrl, method: .get, parameters:["detailList":"2007217","checkList":"2007124"] ).responseJSON { response in
+       let dparameters = ["detailList":"2007217","checkList":"2007124"]
+        
+        Alamofire.request(reqUrl, method: .get, parameters: params ).responseJSON { response in
             
-               if (response.result.isSuccess){
-                   self.JSONParser(requestResponse: response.result.value as! NSDictionary)
-                
+                if (response.result.isSuccess){
+                    self.JSONParser(requestResponse: response.result.value as! NSDictionary)
                }else {
-                   print("Error: \(String(describing: response.result.error))")
-                  
+                    print("Error: \(String(describing: response.result.error))")
                }
+            self.tableView.reloadData()
            }
        }
     
     func JSONParser(requestResponse: NSDictionary){
-                           
+                       
+        productArray.removeAll()
         let responseResult: NSDictionary = requestResponse.object(forKey: "result") as! NSDictionary
         let resultData: NSDictionary = responseResult.object(forKey: "data") as! NSDictionary
         let dataProducts: NSArray = resultData.object(forKey: "products") as! NSArray
-    
+        self.productArray.removeAll()
             for i in 0..<dataProducts.count{
                 
                 let tempProduct = ProductObject()
@@ -121,7 +124,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 self.productArray.append(tempProduct)
                }
-                     
+        self.tableView.reloadData()
        }
     
 // MARK: TableView
@@ -166,7 +169,9 @@ extension UIImageView {
         let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(style: .gray)
         addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        activityIndicator.center = self.center
+        let xPose = self.center.x - 20
+        let yPose = self.center.x - 20
+        activityIndicator.center = CGPoint(x: xPose, y: yPose)
 
         // if not, download image from url
         URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
