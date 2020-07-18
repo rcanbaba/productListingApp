@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		165AC6C324C318620028FED6 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165AC6C224C318620028FED6 /* FilterViewController.swift */; };
 		B433572124BF1B740048A7D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B433572024BF1B740048A7D4 /* AppDelegate.swift */; };
 		B433572324BF1B740048A7D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B433572224BF1B740048A7D4 /* SceneDelegate.swift */; };
 		B433572524BF1B740048A7D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B433572424BF1B740048A7D4 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		165AC6C224C318620028FED6 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		212300DFD9FBF9E912886072 /* Pods-CicekSepeti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CicekSepeti.debug.xcconfig"; path = "Target Support Files/Pods-CicekSepeti/Pods-CicekSepeti.debug.xcconfig"; sourceTree = "<group>"; };
 		8C4C074CEA8EEED1E71CEAE9 /* Pods_CicekSepeti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CicekSepeti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B433571D24BF1B740048A7D4 /* CicekSepeti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CicekSepeti.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,7 @@
 				B49656F924C05D1B0002E7CD /* CustomCicekCell.swift */,
 				B433572224BF1B740048A7D4 /* SceneDelegate.swift */,
 				B433572424BF1B740048A7D4 /* ViewController.swift */,
+				165AC6C224C318620028FED6 /* FilterViewController.swift */,
 				B433572624BF1B740048A7D4 /* Main.storyboard */,
 				B433572924BF1B760048A7D4 /* Assets.xcassets */,
 				B433572B24BF1B760048A7D4 /* LaunchScreen.storyboard */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				165AC6C324C318620028FED6 /* FilterViewController.swift in Sources */,
 				B49656FA24C05D1B0002E7CD /* CustomCicekCell.swift in Sources */,
 				B433572524BF1B740048A7D4 /* ViewController.swift in Sources */,
 				B433572124BF1B740048A7D4 /* AppDelegate.swift in Sources */,

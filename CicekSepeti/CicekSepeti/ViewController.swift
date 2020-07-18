@@ -15,22 +15,15 @@ enum requestUrl: String{
     case productList = "https://api.ciceksepeti.com/v1/product/ch/dynamicproductlist"
 }
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, sendFilterDelegateProtocol {
+     
     
-    // These strings will be the data for the table view cells
-    let animals: [String] = ["Horse", "Cow", "Camel", "Sheep", "Goat"]
-
-    // These are the colors of the square views in our table view cells.
-    // In a real project you might use UIImages.
-    let colors = [UIColor.blue, UIColor.yellow, UIColor.magenta, UIColor.red, UIColor.brown]
-
-    // Don't forget to enter this in IB also
-    let cellReuseIdentifier = "cicekCell"
-
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var filterButton: UIButton!
     
     var productArray: [ProductObject] = []
-
+    let cellReuseIdentifier = "cicekCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -39,25 +32,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.productArray.count
+// MARK: Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "getFilterSegue" {
+            let filterVC: FilterViewController = segue.destination as! FilterViewController
+            filterVC.delegate = self
+        }
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell:CustomCicekCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! CustomCicekCell
-
-        cell.cicekView.loadImageUsingCache(withUrl: self.productArray[indexPath.row].Image!)
-        cell.cicekCellPriceLabel.text = (self.productArray[indexPath.row].Price?.prefix(5))! + " TL"
-        cell.cicekCellLabel.text = self.productArray[indexPath.row].Name
-
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
+    
+// MARK: protocol filter data
+    func sendDataToFirstViewController(myData: String) {
+        print(myData)
     }
        
+// MARK: Requests & Parsing
+    
     func getProductRequest(){
         
         let reqUrl = requestUrl.productList.rawValue
@@ -66,17 +55,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
                if (response.result.isSuccess){
                    self.JSONParser(requestResponse: response.result.value as! NSDictionary)
-                
                }else {
                    print("Error: \(String(describing: response.result.error))")
-                  
                }
-            
-            self.tableView.reloadData()
-            
+            self.tableView.reloadData()            
            }
        }
-       
+    
     func JSONParser(requestResponse: NSDictionary){
                            
         let responseResult: NSDictionary = requestResponse.object(forKey: "result") as! NSDictionary
@@ -97,7 +82,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                      
        }
     
+// MARK: TableView
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.productArray.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell:CustomCicekCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! CustomCicekCell
+
+        cell.cicekView.loadImageUsingCache(withUrl: self.productArray[indexPath.row].Image!)
+        cell.cicekCellPriceLabel.text = (self.productArray[indexPath.row].Price?.prefix(5))! + " TL" // ilk 5 hanesini almak için .prefix()
+        cell.cicekCellLabel.text = self.productArray[indexPath.row].Name
+
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You tapped cell number \(indexPath.row).")
+    }
+    
 }
+
+// MARK: ImageView extesion:
+// StackOverFlow'da gördüm pod kurmak yerine denedim güzel çalıştı :)
 
 let imageCache = NSCache<NSString, UIImage>()
 extension UIImageView {
