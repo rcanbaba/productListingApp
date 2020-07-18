@@ -15,10 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ir1-Ar-TBA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ir1-Ar-TBA">
                                 <rect key="frame" x="20" y="124" width="374" height="718"/>
-                                <color key="backgroundColor" red="0.15000000599999999" green="0.15000000599999999" blue="0.15000000599999999" alpha="1" colorSpace="deviceRGB"/>
-                                <color key="separatorColor" red="0.95686274510000002" green="0.23137254900000001" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.96078431372549022" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="1" green="0.94117647059999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cicekCell" rowHeight="120" id="3eL-PN-jpy" customClass="CustomCicekCell" customModule="CicekSepeti" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="120"/>
@@ -28,16 +29,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dlc-zy-Imj">
-                                                    <rect key="frame" x="132" y="26" width="210" height="20.5"/>
+                                                    <rect key="frame" x="132" y="26" width="210" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.96436215753424659" green="0.31092144691780821" blue="0.88104666095890416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="1" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <size key="shadowOffset" width="-1" height="-1"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJE-4r-APl">
-                                                    <rect key="frame" x="132" y="58.5" width="122" height="21"/>
+                                                    <rect key="frame" x="132" y="59.5" width="122" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.89709538219999996" green="0.47623300549999997" blue="0.88790804150000002" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <size key="shadowOffset" width="-1" height="-1"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fvu-e3-aQL">
                                                     <rect key="frame" x="16" y="10" width="100" height="100"/>
@@ -59,7 +64,7 @@
                                                 <constraint firstItem="Dlc-zy-Imj" firstAttribute="leading" secondItem="fvu-e3-aQL" secondAttribute="trailing" constant="16" id="yun-Xq-3Yk"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.12572238869863014" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="cicekCellLabel" destination="Dlc-zy-Imj" id="ACx-3j-61R"/>
                                             <outlet property="cicekCellPriceLabel" destination="AJE-4r-APl" id="C4k-UU-asw"/>
@@ -69,26 +74,54 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ir-ml-pFS">
-                                <rect key="frame" x="279" y="64" width="95" height="40"/>
-                                <state key="normal" title="Filtrele" image="filterIcon"/>
+                                <rect key="frame" x="274" y="64" width="120" height="40"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="ah5-wI-jlC"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="-1" height="-1"/>
+                                <state key="normal" title="Filtrele" image="filterIcon">
+                                    <color key="titleColor" red="1" green="0.94117647059999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="evh-o0-F9s" kind="presentation" identifier="getFilterSegue" id="BFh-RR-lN5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIN-Yp-t2N">
+                                <rect key="frame" x="20" y="64" width="170" height="40"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="5zS-0p-Pa1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <size key="titleShadowOffset" width="-1" height="-1"/>
+                                <state key="normal" title="ÇiçekSepeti" image="basketIcon">
+                                    <color key="titleColor" red="1" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="CicekSepetiButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e7t-2T-sjy"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.22367294520547945" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ir1-Ar-TBA" firstAttribute="top" secondItem="5Ir-ml-pFS" secondAttribute="bottom" constant="20" id="1uE-hH-Wu1"/>
+                            <constraint firstItem="rIN-Yp-t2N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="D4h-qm-gmv"/>
                             <constraint firstItem="Ir1-Ar-TBA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="TAp-8F-KGH"/>
+                            <constraint firstItem="Ir1-Ar-TBA" firstAttribute="top" secondItem="rIN-Yp-t2N" secondAttribute="bottom" constant="20" id="TKJ-NV-evG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ir1-Ar-TBA" secondAttribute="bottom" constant="20" id="Ubk-XK-8SM"/>
+                            <constraint firstItem="rIN-Yp-t2N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VKS-uO-bBy"/>
                             <constraint firstItem="5Ir-ml-pFS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ddK-Ag-tNS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Ir-ml-pFS" secondAttribute="trailing" constant="40" id="fso-E4-MYG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Ir-ml-pFS" secondAttribute="trailing" constant="20" id="fso-E4-MYG"/>
                             <constraint firstItem="Ir1-Ar-TBA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ich-dA-TOH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ir1-Ar-TBA" secondAttribute="trailing" constant="20" id="n7Z-MX-YDR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cicekSepetiButton" destination="rIN-Yp-t2N" id="o88-L4-1cx"/>
                         <outlet property="filterButton" destination="5Ir-ml-pFS" id="iGb-mz-kis"/>
                         <outlet property="tableView" destination="Ir1-Ar-TBA" id="MDk-so-P7g"/>
                     </connections>
@@ -109,39 +142,39 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Vs-Ua-3ua">
-                                        <rect key="frame" x="8" y="8" width="398" height="826"/>
+                                        <rect key="frame" x="16" y="16" width="382" height="810"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKY-ME-4eF">
-                                                <rect key="frame" x="109" y="741" width="180" height="45"/>
-                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKY-ME-4eF">
+                                                <rect key="frame" x="101" y="725" width="180" height="45"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="THn-dr-RRb"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="xIF-mZ-oVe"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                <size key="titleShadowOffset" width="1" height="1"/>
-                                                <state key="normal" title="Sonuçları Listele">
-                                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                    <color key="titleShadowColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <size key="titleShadowOffset" width="-1" height="-1"/>
+                                                <state key="normal" title="Sonuçları Listele" image="searchIcon">
+                                                    <color key="titleColor" red="1" green="0.94117647059999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="listButtonPressed:" destination="evh-o0-F9s" eventType="touchUpInside" id="7nw-35-PJc"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" red="1" green="0.94117647059999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="hKY-ME-4eF" firstAttribute="centerX" secondItem="3Vs-Ua-3ua" secondAttribute="centerX" id="3qs-bb-yyj"/>
                                             <constraint firstAttribute="bottom" secondItem="hKY-ME-4eF" secondAttribute="bottom" constant="40" id="PGh-fe-0WZ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="3Vs-Ua-3ua" firstAttribute="top" secondItem="HpI-Kp-Rmh" secondAttribute="top" constant="8" id="COE-wR-sFg"/>
-                                    <constraint firstItem="HpI-Kp-Rmh" firstAttribute="bottom" secondItem="3Vs-Ua-3ua" secondAttribute="bottom" constant="8" id="F1y-ir-cFV"/>
+                                    <constraint firstItem="3Vs-Ua-3ua" firstAttribute="top" secondItem="HpI-Kp-Rmh" secondAttribute="top" constant="16" id="COE-wR-sFg"/>
+                                    <constraint firstItem="HpI-Kp-Rmh" firstAttribute="bottom" secondItem="3Vs-Ua-3ua" secondAttribute="bottom" constant="16" id="F1y-ir-cFV"/>
                                     <constraint firstItem="3Vs-Ua-3ua" firstAttribute="trailing" secondItem="Zj7-tA-6DP" secondAttribute="trailingMargin" id="JsZ-6u-I6g"/>
-                                    <constraint firstItem="HpI-Kp-Rmh" firstAttribute="trailing" secondItem="3Vs-Ua-3ua" secondAttribute="trailing" constant="8" id="MB5-Jt-4ha"/>
-                                    <constraint firstItem="3Vs-Ua-3ua" firstAttribute="leading" secondItem="HpI-Kp-Rmh" secondAttribute="leading" constant="8" id="gn3-4U-DPL"/>
+                                    <constraint firstItem="HpI-Kp-Rmh" firstAttribute="trailing" secondItem="3Vs-Ua-3ua" secondAttribute="trailing" constant="16" id="MB5-Jt-4ha"/>
+                                    <constraint firstItem="3Vs-Ua-3ua" firstAttribute="leading" secondItem="HpI-Kp-Rmh" secondAttribute="leading" constant="16" id="gn3-4U-DPL"/>
                                     <constraint firstItem="3Vs-Ua-3ua" firstAttribute="bottom" secondItem="Zj7-tA-6DP" secondAttribute="bottomMargin" constant="-108" id="gzo-Ya-eDj"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="tPQ-f7-Lzo"/>
@@ -158,6 +191,7 @@
                         <viewLayoutGuide key="safeArea" id="zQD-cM-DHP"/>
                     </view>
                     <connections>
+                        <outlet property="filterView" destination="3Vs-Ua-3ua" id="9dm-Kq-O8e"/>
                         <outlet property="listButton" destination="hKY-ME-4eF" id="KdB-6H-8UF"/>
                     </connections>
                 </viewController>
@@ -167,6 +201,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="basketIcon" width="40" height="40"/>
         <image name="filterIcon" width="40" height="40"/>
+        <image name="searchIcon" width="40" height="40"/>
     </resources>
 </document>

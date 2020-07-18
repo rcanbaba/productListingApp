@@ -17,14 +17,19 @@ class FilterViewController: UIViewController {
     var delegate: sendFilterDelegateProtocol? = nil
     
     @IBOutlet var listButton: UIButton!
+    @IBOutlet var filterView: UIView!
     
     var mainViewController:ViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        listButton.layer.cornerRadius = 20
-      //  listButton.layer.borderWidth = 0.5
-      //  listButton.layer.borderColor = UIColor.black.cgColor
+        listButton.layer.cornerRadius = 16
+        filterView.layer.cornerRadius = 16
+        listButton.layer.shadowColor = #colorLiteral(red: 0.7843137255, green: 0.5882352941, blue: 0.7843137255, alpha: 1)
+        listButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        listButton.layer.shadowOpacity = 0.8
+        listButton.layer.shadowRadius = 16
+        listButton.layer.masksToBounds = false
     }
     
     @IBAction func listButtonPressed(_ sender: UIButton) {

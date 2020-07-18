@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var filterButton: UIButton!
+    @IBOutlet var cicekSepetiButton: UIButton!
     
     var productArray: [ProductObject] = []
     let cellReuseIdentifier = "cicekCell"
@@ -28,10 +29,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        setupUI()
         getProductRequest()
         
-    }
+    }    
     
+// MARK: SetupUI
+    func setupUI(){
+        tableView.layer.cornerRadius = 16
+                
+        filterButton.layer.cornerRadius = 16
+        filterButton.layer.shadowColor = #colorLiteral(red: 0.7843137255, green: 0.5882352941, blue: 0.7843137255, alpha: 1)
+        filterButton.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        filterButton.layer.shadowOpacity = 0.8
+        filterButton.layer.shadowRadius = 16
+        filterButton.layer.masksToBounds = false
+        
+        cicekSepetiButton.layer.cornerRadius = 16
+        cicekSepetiButton.layer.shadowColor = #colorLiteral(red: 0.7843137255, green: 0.5882352941, blue: 0.7843137255, alpha: 1)
+        cicekSepetiButton.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        cicekSepetiButton.layer.shadowOpacity = 0.8
+        cicekSepetiButton.layer.shadowRadius = 16
+        cicekSepetiButton.layer.masksToBounds = false
+    }
+
 // MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "getFilterSegue" {
@@ -44,7 +65,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func sendDataToFirstViewController(myData: String) {
         print(myData)
     }
-       
+    
+ // MARK: refresh Button
+    @IBAction func CicekSepetiButtonPressed(_ sender: UIButton) {
+        getProductRequest()
+    }
+
 // MARK: Requests & Parsing
     
     func getProductRequest(){
@@ -59,6 +85,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                    print("Error: \(String(describing: response.result.error))")
                }
             self.tableView.reloadData()            
+           }
+       }
+    
+    func getProductRequestwithParam(){ // filtre tiplerine göre parametreler ekliyoruz.
+        
+        let reqUrl = requestUrl.productList.rawValue
+        
+        Alamofire.request(reqUrl, method: .get, parameters:["detailList":"2007217","checkList":"2007124"] ).responseJSON { response in
+            
+               if (response.result.isSuccess){
+                   self.JSONParser(requestResponse: response.result.value as! NSDictionary)
+                
+               }else {
+                   print("Error: \(String(describing: response.result.error))")
+                  
+               }
            }
        }
     
