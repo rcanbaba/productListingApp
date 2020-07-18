@@ -163,7 +163,7 @@ extension UIImageView {
             return
         }
 
-        let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(style: .medium)
+        let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(style: .gray)
         addSubview(activityIndicator)
         activityIndicator.startAnimating()
         activityIndicator.center = self.center
