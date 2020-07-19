@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 
-enum requestUrl: String{
+enum requestUrl: String{ // gerek kalmadı ama kalsın :)
     case productList = "https://api.ciceksepeti.com/v1/product/ch/dynamicproductlist"
 }
 
@@ -30,9 +30,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         setupUI()
         getProductRequest()
-      //  getProductRequestwithParam("2007101")
         
-    }    
+    }
     
 // MARK: SetupUI
     func setupUI(){
@@ -73,7 +72,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
 // MARK: Requests & Parsing
-    
+// TO DO: tek request fonkisyonuna düşür!! parametreli ve parametresiz içn
     func getProductRequest(){
         
         let reqUrl = requestUrl.productList.rawValue
@@ -157,13 +156,12 @@ extension UIImageView {
         let url = URL(string: urlString)
         if url == nil {return}
         self.image = nil
-
         // check cached image
         if let cachedImage = imageCache.object(forKey: urlString as NSString)  {
             self.image = cachedImage
             return
         }
-
+// TO DO: activity indicator kayık geliyor UNUTMA!!! düzelt..
         let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(style: .gray)
         addSubview(activityIndicator)
         activityIndicator.startAnimating()
