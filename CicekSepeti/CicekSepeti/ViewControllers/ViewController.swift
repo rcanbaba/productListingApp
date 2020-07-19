@@ -62,7 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 // MARK: protocol filter data
-    func sendDataToFirstViewController(parameters: [String : String]) {
+    func sendDataToFirstViewController(parameters: String) {
         print(parameters)
         getProductRequestwithParam(parameters)
     }
@@ -89,13 +89,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
            }
        }
     
-    func getProductRequestwithParam(_ params: [String : String]){ // filtre tiplerine göre parametreler ekliyoruz.
+    func getProductRequestwithParam(_ params: String){ // filtre tiplerine göre parametreler ekliyoruz.
         
-        let reqUrl = requestUrl.productList.rawValue
+        let reqUrl = requestUrl.productList.rawValue + "?"
         
-       let dparameters = ["detailList":"2007217","checkList":"2007124"]
-        
-        Alamofire.request(reqUrl, method: .get, parameters: params ).responseJSON { response in
+        Alamofire.request(reqUrl + params, method: .get, parameters: nil ).responseJSON { response in
             
                 if (response.result.isSuccess){
                     self.JSONParser(requestResponse: response.result.value as! NSDictionary)

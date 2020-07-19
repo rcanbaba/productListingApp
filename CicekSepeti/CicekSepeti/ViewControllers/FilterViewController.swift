@@ -10,8 +10,10 @@ import UIKit
 import Alamofire
 
 protocol sendFilterDelegateProtocol {
-    func sendDataToFirstViewController(parameters: [String : String])
+    func sendDataToFirstViewController(parameters: String)
 }
+
+//typealias MutipleValue = (firstObject: String, secondObject: String)
 
 class FilterViewController: UIViewController {
     
@@ -28,8 +30,12 @@ class FilterViewController: UIViewController {
     @IBOutlet var categoryButton2: UIButton!
     @IBOutlet var categoryButton3: UIButton!
     
+    @IBOutlet var personView: UIView!
+    @IBOutlet var personButton: UIButton!
+    @IBOutlet var personLabel: UILabel!
+    
     var categoryButtonArray: [UIButton] = []
-    var params: [String : String] = ["":""]
+    var params: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +62,10 @@ class FilterViewController: UIViewController {
         categoryView.layer.borderWidth = 1.0
         categoryView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
+        personView.layer.cornerRadius = 16
+        personView.layer.borderWidth = 1.0
+        personView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        
         categoryLabel.text = dynamicFilterArray[0].name!
         categoryButtonArray.append(categoryButton1)
         categoryButtonArray.append(categoryButton2)
@@ -64,7 +74,9 @@ class FilterViewController: UIViewController {
         for k in 0..<3{
             categoryButtonArray[k].setTitle(dynamicFilterArray[0].filterValues[k].name, for: .normal)
         }
-        
+        personLabel.text = dynamicFilterArray[1].name!
+        personButton.setTitle(dynamicFilterArray[1].filterValues[0].name, for: .normal)
+
        }
     
  // MARK: Send filters to FirstVC
@@ -72,33 +84,47 @@ class FilterViewController: UIViewController {
     @IBAction func listButtonPressed(_ sender: UIButton) {
         
         if self.delegate != nil {
-            checkCategoryFilters()
+            checkFilters()
             self.delegate?.sendDataToFirstViewController(parameters: params)
-            
             dismiss(animated: true, completion: nil)
         }
     }
     
-    func checkCategoryFilters(){
-        
+    func checkFilters(){
+    
+        //groupID kontrolü yapabiliriz 1 ise detailList olacak param ama gerek yok kategoriler hep 1
         var returnNSNumber: NSNumber!
         for k in 0..<3{
             if(categoryButtonArray[k].isSelected == true){
                 returnNSNumber = dynamicFilterArray[0].filterValues[k].id
+                let detailId = String(String(format:"%f", returnNSNumber!.doubleValue).prefix(7))
+                params = "detailList=" + detailId
                 break
             }
         }
         
-        let detailId = String(String(format:"%f", returnNSNumber!.doubleValue).prefix(7))
-        
-        //groupID kontrolü yapabiliriz 1 ise detailList olacak param
-       // params = ["detailList":detailId]
-        params["detailList"] = detailId
-      //  params["detailList"] = "2009383"
+        if(personButton.isSelected == true){
+            if(dynamicFilterArray[1].filterValues[0].name == "Kişiselleştirilmiş" ){
+                
+                let personFilterIdNS = dynamicFilterArray[1].filterValues[0].id
+                let personFilterId = String(String(format:"%f", personFilterIdNS!.doubleValue).prefix(7))
+                
+                    if(dynamicFilterArray[1].filterValues[0].group == 1){
+                            params = params + "&detailList=" + personFilterId
+                    }else if(dynamicFilterArray[1].filterValues[0].group == 2){
+                            params = params + "&detailList=" + personFilterId
+                    }else if(dynamicFilterArray[1].filterValues[0].group == 3){
+                            params = params + "&detailList=" + personFilterId
+                    }else{
+                       
+                    }
+            }
+        }
     }
     
     
-// MARK: Category button actions
+// MARK: Category button actions && personButton
+    
     @IBAction func categoryButton1Pressed(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         categoryButton2.isSelected = false
@@ -117,9 +143,10 @@ class FilterViewController: UIViewController {
         categoryButton2.isSelected = false
     }
     
-    
-    
-    
+    @IBAction func personButtonPressed(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+    }
+
 // MARK: Filter request & parsing
     
     func getFilterRequest(){
@@ -135,8 +162,7 @@ class FilterViewController: UIViewController {
            // self.tableView.reloadData()
            }
        }
-    
-    
+        
     func JSONParser(requestResponse: NSDictionary){
                            
         let responseResult: NSDictionary = requestResponse.object(forKey: "result") as! NSDictionary

@@ -164,8 +164,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mt8-Rr-Pqv">
                                                 <rect key="frame" x="10" y="10" width="362" height="90"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pn0-xc-Sjn" userLabel="categoryLabel">
-                                                        <rect key="frame" x="156.5" y="5" width="49" height="25"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="catagoryLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pn0-xc-Sjn" userLabel="categoryLabel">
+                                                        <rect key="frame" x="118.5" y="5" width="125.5" height="25"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -173,10 +173,10 @@
                                                         <size key="shadowOffset" width="-1" height="-1"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5SN-eY-sIU" userLabel="categoryButton1">
-                                                        <rect key="frame" x="30" y="40" width="46" height="30"/>
+                                                        <rect key="frame" x="30" y="40" width="74" height="30"/>
                                                         <color key="tintColor" red="0.8980392157" green="0.47450980390000003" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <size key="titleShadowOffset" width="-1" height="-1"/>
-                                                        <state key="normal" title="Button">
+                                                        <state key="normal" title="cat1Button">
                                                             <color key="titleColor" red="0.8980392157" green="0.47450980390000003" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -185,10 +185,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKO-Bn-bak" userLabel="categoryButton2">
-                                                        <rect key="frame" x="158" y="40" width="46" height="30"/>
+                                                        <rect key="frame" x="143" y="40" width="76" height="30"/>
                                                         <color key="tintColor" red="0.8980392157" green="0.47450980390000003" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <size key="titleShadowOffset" width="-1" height="-1"/>
-                                                        <state key="normal" title="Button">
+                                                        <state key="normal" title="cat2Button">
                                                             <color key="titleColor" red="0.8980392157" green="0.47450980390000003" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -197,10 +197,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYv-BJ-j9z" userLabel="categoryButton3">
-                                                        <rect key="frame" x="286" y="40" width="46" height="30"/>
+                                                        <rect key="frame" x="255" y="40" width="77" height="30"/>
                                                         <color key="tintColor" red="0.8980392157" green="0.47450980390000003" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <size key="titleShadowOffset" width="-1" height="-1"/>
-                                                        <state key="normal" title="Button">
+                                                        <state key="normal" title="cat3Button">
                                                             <color key="titleColor" red="0.8980392157" green="0.47450980390000003" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -222,6 +222,39 @@
                                                     <constraint firstItem="AYv-BJ-j9z" firstAttribute="centerY" secondItem="Mt8-Rr-Pqv" secondAttribute="centerY" constant="10" id="uWT-7B-A10"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSF-LP-lby">
+                                                <rect key="frame" x="10" y="120" width="362" height="90"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="personLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwV-Ws-rKC" userLabel="categoryLabel">
+                                                        <rect key="frame" x="126.5" y="5" width="109" height="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <size key="shadowOffset" width="-1" height="-1"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gc-cC-9pt" userLabel="categoryButton2">
+                                                        <rect key="frame" x="134.5" y="40" width="93" height="30"/>
+                                                        <color key="tintColor" red="0.8980392157" green="0.47450980390000003" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <size key="titleShadowOffset" width="-1" height="-1"/>
+                                                        <state key="normal" title="personButton">
+                                                            <color key="titleColor" red="0.8980392157" green="0.47450980390000003" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="personButtonPressed:" destination="evh-o0-F9s" eventType="touchUpInside" id="U2A-hC-wem"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="0gc-cC-9pt" firstAttribute="centerY" secondItem="SSF-LP-lby" secondAttribute="centerY" constant="10" id="7Iu-6e-4iE"/>
+                                                    <constraint firstItem="SwV-Ws-rKC" firstAttribute="centerX" secondItem="SSF-LP-lby" secondAttribute="centerX" id="SIC-FS-clG"/>
+                                                    <constraint firstAttribute="height" constant="90" id="lND-X6-f2E"/>
+                                                    <constraint firstItem="0gc-cC-9pt" firstAttribute="centerX" secondItem="SSF-LP-lby" secondAttribute="centerX" id="t7g-6x-Ljo"/>
+                                                    <constraint firstItem="SwV-Ws-rKC" firstAttribute="top" secondItem="SSF-LP-lby" secondAttribute="top" constant="5" id="ykI-ez-p2D"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.94117647059999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -229,7 +262,10 @@
                                             <constraint firstItem="hKY-ME-4eF" firstAttribute="centerX" secondItem="3Vs-Ua-3ua" secondAttribute="centerX" id="3qs-bb-yyj"/>
                                             <constraint firstAttribute="trailing" secondItem="Mt8-Rr-Pqv" secondAttribute="trailing" constant="10" id="5kQ-85-0Cl"/>
                                             <constraint firstAttribute="bottom" secondItem="hKY-ME-4eF" secondAttribute="bottom" constant="40" id="PGh-fe-0WZ"/>
+                                            <constraint firstItem="SSF-LP-lby" firstAttribute="top" secondItem="Mt8-Rr-Pqv" secondAttribute="bottom" constant="20" id="VcO-zf-7jF"/>
                                             <constraint firstItem="Mt8-Rr-Pqv" firstAttribute="top" secondItem="3Vs-Ua-3ua" secondAttribute="top" constant="10" id="d3i-bX-Iqr"/>
+                                            <constraint firstAttribute="trailing" secondItem="SSF-LP-lby" secondAttribute="trailing" constant="10" id="hxn-Iv-9ug"/>
+                                            <constraint firstItem="SSF-LP-lby" firstAttribute="leading" secondItem="3Vs-Ua-3ua" secondAttribute="leading" constant="10" id="raM-Xo-nv8"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -261,6 +297,9 @@
                         <outlet property="categoryView" destination="Mt8-Rr-Pqv" id="ND0-qf-9oe"/>
                         <outlet property="filterView" destination="3Vs-Ua-3ua" id="9dm-Kq-O8e"/>
                         <outlet property="listButton" destination="hKY-ME-4eF" id="KdB-6H-8UF"/>
+                        <outlet property="personButton" destination="0gc-cC-9pt" id="Ckg-Do-hnw"/>
+                        <outlet property="personLabel" destination="SwV-Ws-rKC" id="qwg-yR-ezD"/>
+                        <outlet property="personView" destination="SSF-LP-lby" id="irA-EW-Vo9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Vk-DP-cFr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
